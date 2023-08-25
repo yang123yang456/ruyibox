@@ -32,14 +32,14 @@ android {
         }
     }
 
-    signingConfigs {
-        config {
-            storeFile file('D:\\xyys.jks')
-            storePassword '102013'
-            keyAlias = 'xyys'
-            keyPassword '102013'
-        }
-    }
+    //signingConfigs {
+        //config {
+            //storeFile file('D:\\xyys.jks')
+            //storePassword '102013'
+            //keyAlias = 'xyys'
+            //keyPassword '102013'
+        //}
+    //}
 
     buildTypes {
         debug {
