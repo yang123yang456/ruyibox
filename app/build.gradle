@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId 'ysjysb.cn'
+        applicationId 'com.ruyibox.zhuzige'
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -26,20 +26,20 @@ android {
         variant.outputs.each { output ->
             if (output.outputFileName != null && output.outputFileName.endsWith('.apk')) {
                 def fileName
-                fileName = "yys_${variant.versionName}.apk"
+                fileName = "ruyibox_${variant.versionName}.apk"
                 output.outputFileName = fileName
             }
         }
     }
 
-    //signingConfigs {
-        //config {
-            //storeFile file('D:\\xyys.jks')
-            //storePassword '102013'
-            //keyAlias = 'xyys'
-            //keyPassword '102013'
-        //}
-    //}
+    /*signingConfigs {
+        config {
+            storeFile file('D:\\xyys.jks')
+            storePassword '102013'
+            keyAlias = 'xyys'
+            keyPassword '102013'
+        }
+    }*/
 
     buildTypes {
         debug {
