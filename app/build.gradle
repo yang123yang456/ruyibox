@@ -44,7 +44,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            signingConfig signingConfigs.config
+            //signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             ndk {
                 abiFilters 'armeabi-v7a'
