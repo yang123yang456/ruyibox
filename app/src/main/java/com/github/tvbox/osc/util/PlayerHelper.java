@@ -10,7 +10,7 @@ import com.github.tvbox.osc.player.render.SurfaceRenderViewFactory;
 import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
-import com.github.tvbox.osc.player.thirdparty.VlcPlayer;
+//import com.github.tvbox.osc.player.thirdparty.VlcPlayer;
 import com.orhanobut.hawk.Hawk;
 
 import org.json.JSONException;
@@ -152,7 +152,7 @@ public class PlayerHelper {
         if (playersInfo.containsKey(playType)) {
             return playersInfo.get(playType);
         } else {
-            return "系统播放器";
+            return "测试播放器";
         }
     }
 
@@ -166,7 +166,6 @@ public class PlayerHelper {
             playersInfo.put(10, "MX播放器");
             playersInfo.put(11, "Reex播放器");
             playersInfo.put(12, "Kodi播放器");
-            playersInfo.put(13, "VLC播放器");
             mPlayersInfo = playersInfo;
         }
         return mPlayersInfo;
@@ -176,14 +175,13 @@ public class PlayerHelper {
     public static HashMap<Integer, Boolean> getPlayersExistInfo() {
         if (mPlayersExistInfo == null) {
             HashMap<Integer, Boolean> playersExist = new HashMap<>();
-            
-            playersExist.put(1, true);
             playersExist.put(0, true);
+            playersExist.put(1, true);            
             playersExist.put(2, true);
             playersExist.put(10, MXPlayer.getPackageInfo() != null);
             playersExist.put(11, ReexPlayer.getPackageInfo() != null);
             playersExist.put(12, Kodi.getPackageInfo() != null);
-            playersExist.put(13, VlcPlayer.getPackageInfo() != null);
+            //playersExist.put(13, VlcPlayer.getPackageInfo() != null);
             mPlayersExistInfo = playersExist;
         }
         return mPlayersExistInfo;
