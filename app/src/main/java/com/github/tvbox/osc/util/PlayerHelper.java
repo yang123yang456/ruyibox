@@ -86,7 +86,7 @@ public class PlayerHelper {
     }
 
     public static void updateCfg(VideoView videoView) {
-        int playType = Hawk.get(HawkConfig.PLAY_TYPE, 0);
+        int playType = Hawk.get(HawkConfig.PLAY_TYPE, 1);
         PlayerFactory playerFactory;
         if (playType == 1) {
             playerFactory = new PlayerFactory<IjkMediaPlayer>() {
@@ -226,10 +226,10 @@ public class PlayerHelper {
                 callResult = Kodi.run(activity, url, title, subtitle, headers);
                 break;
             }
-            case 13: {
-                callResult = VlcPlayer.run(activity, url, title, subtitle, progress);
-                break;
-            }
+            //case 13: {
+            //    callResult = VlcPlayer.run(activity, url, title, subtitle, progress);
+            //    break;
+            //}
         }
         return callResult;
     }
