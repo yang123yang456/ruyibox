@@ -228,10 +228,6 @@ public class PlayerHelper {
                 break;
             }
             case 13: {
-                callResult = RemoteTVBox.run(activity, url, title, subtitle, headers);
-                break;
-            }
-            case 14: {
                 callResult = VlcPlayer.run(activity, url, title, subtitle, progress);
                 break;
             }
