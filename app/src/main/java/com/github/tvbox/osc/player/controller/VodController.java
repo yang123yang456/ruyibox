@@ -342,9 +342,6 @@ public class VodController extends BaseController {
                 FastClickCheckUtil.check(view);
                 try {
                     int playerType = mPlayerConfig.getInt("pl");
-                    if(playerType == 0){
-                        playerType = 1;
-                    };
                     int defaultPos = 0;
                     ArrayList<Integer> players = PlayerHelper.getExistPlayerTypes();
                     ArrayList<Integer> renders = new ArrayList<>();
