@@ -176,8 +176,9 @@ public class PlayerHelper {
     public static HashMap<Integer, Boolean> getPlayersExistInfo() {
         if (mPlayersExistInfo == null) {
             HashMap<Integer, Boolean> playersExist = new HashMap<>();
-            playersExist.put(0, true);
+            
             playersExist.put(1, true);
+            playersExist.put(0, true);
             playersExist.put(2, true);
             playersExist.put(10, MXPlayer.getPackageInfo() != null);
             playersExist.put(11, ReexPlayer.getPackageInfo() != null);
