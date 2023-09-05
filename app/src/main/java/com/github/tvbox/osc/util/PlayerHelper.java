@@ -10,7 +10,6 @@ import com.github.tvbox.osc.player.render.SurfaceRenderViewFactory;
 import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
-import com.github.tvbox.osc.player.thirdparty.RemoteTVBox;
 import com.github.tvbox.osc.player.thirdparty.VlcPlayer;
 import com.orhanobut.hawk.Hawk;
 
@@ -167,8 +166,7 @@ public class PlayerHelper {
             playersInfo.put(10, "MX播放器");
             playersInfo.put(11, "Reex播放器");
             playersInfo.put(12, "Kodi播放器");
-            playersInfo.put(13, "附近TVBox");
-            playersInfo.put(14, "VLC播放器");
+            playersInfo.put(13, "VLC播放器");
             mPlayersInfo = playersInfo;
         }
         return mPlayersInfo;
@@ -184,8 +182,7 @@ public class PlayerHelper {
             playersExist.put(10, MXPlayer.getPackageInfo() != null);
             playersExist.put(11, ReexPlayer.getPackageInfo() != null);
             playersExist.put(12, Kodi.getPackageInfo() != null);
-            playersExist.put(13, RemoteTVBox.getAvalible() != null);
-            playersExist.put(14, VlcPlayer.getPackageInfo() != null);
+            playersExist.put(13, VlcPlayer.getPackageInfo() != null);
             mPlayersExistInfo = playersExist;
         }
         return mPlayersExistInfo;
