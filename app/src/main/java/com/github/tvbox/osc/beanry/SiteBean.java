@@ -44,7 +44,7 @@ public class SiteBean {
         public String extend;
         @SerializedName("parse")
         public String parse;
-        @SerializedName("playertype")//播放器
+        @SerializedName("playerType")//播放器
         public int playertype;
         @SerializedName("searchable")
         public int searchable;
