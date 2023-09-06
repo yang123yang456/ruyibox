@@ -39,6 +39,7 @@ public class SiteBean {
         @SerializedName("gtype")
         public int type;
         @SerializedName("gapiname")
+        public String gapiname;
         @SerializedName("extend")
         public String extend;
         @SerializedName("parse")
