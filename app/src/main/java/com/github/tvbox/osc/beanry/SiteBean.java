@@ -32,14 +32,13 @@ public class SiteBean {
          * filterable : 1
          */
 
-        @SerializedName("key")
+        @SerializedName("gid")
         public String gid;
-        @SerializedName("name")
+        @SerializedName("gname")
         public String gname;
-        @SerializedName("type")
+        @SerializedName("gtype")
         public int type;
-        @SerializedName("api")
-        public String gapiname;
+        @SerializedName("gapiname")
         @SerializedName("extend")
         public String extend;
         @SerializedName("parse")
