@@ -340,8 +340,8 @@ public class ApiConfig {
                 sbData.setFilterable(siteData.msg.get(i).filterable);
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
-                //sbData.setExt(siteData.msg.get(i).extend);
-                //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+                sbData.setExt(siteData.msg.get(i).extend);
+                sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
                 if(siteData.msg.get(i).type == 3){//自定义爬虫,添加扩展
@@ -356,8 +356,6 @@ public class ApiConfig {
                         }
 			    sbData.setCategories(cates);
 
-		    }else{
-			sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 		    }
 
 		}
