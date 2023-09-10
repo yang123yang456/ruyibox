@@ -352,7 +352,7 @@ ArrayList<String> cates = new ArrayList<>();//新建一个列表
                             cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中    
                         }   
                             sbData.setCategories(cates);	
-				}
+		}
 
                 
                 if (initData == null || !ToolUtils.getIsEmpty(initData.msg.uiRemoversc) || !initData.msg.uiRemoversc.contains(siteKey)) {
