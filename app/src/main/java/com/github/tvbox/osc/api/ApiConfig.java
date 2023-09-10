@@ -344,7 +344,7 @@ public class ApiConfig {
                 //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                if(siteData.msg.get(i).type=3){
+                if(siteData.msg.get(i).type == 3){
                     sbData.setExt(siteData.msg.get(i).extend);
 				}else{
 					String str = siteData.msg.get(i).extend;
