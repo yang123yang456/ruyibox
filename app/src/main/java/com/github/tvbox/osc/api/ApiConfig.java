@@ -344,9 +344,9 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                /*if(siteData.msg.get(i).type != 3){//自定义爬虫,添加扩展
+                if(siteData.msg.get(i).type != 3){//自定义爬虫,添加扩展
 		    String str = siteData.msg.get(i).extend;
-			if(str!="" && str!=null){
+			if(str!=""){
 			ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
                         String[] genres = str.split(","); // 将字符串按逗号分割成数组  
                         for (String genre : genres) {  
@@ -355,7 +355,7 @@ public class ApiConfig {
 			    sbData.setCategories(cates);
 		    }
 
-		}*/
+		}
 
 
                 
