@@ -355,6 +355,8 @@ public class ApiConfig {
                     }
 		    if (cates != null && !cates.isEmpty()) { //判断列表不为空或null，添加列表
 			sbData.setCategories(cates);
+		    }else{
+			sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 		    }
 		}
 
