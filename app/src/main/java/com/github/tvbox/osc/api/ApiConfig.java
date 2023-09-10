@@ -354,9 +354,7 @@ public class ApiConfig {
                         for (String genre : genres) {  
                             cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
                         }
-					    if (cates != null && !cates.isEmpty()) { 
 				            sbData.setCategories(cates);
-					    }
 					}
 		}
 
