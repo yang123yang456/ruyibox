@@ -356,6 +356,8 @@ public class ApiConfig {
                         }
 			    sbData.setCategories(cates);
 
+		    }else{
+			sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 		    }
 
 		}
