@@ -326,7 +326,7 @@ public class ApiConfig {
         InitBean initData = MMkvUtils.loadInitBean("");
         SiteBean siteData = MMkvUtils.loadSiteBean("");
         ReJieXiBean reJieXiBean = MMkvUtils.loadReJieXiBean("");
-
+ArrayList<String> cates = new ArrayList<>();//新建一个列表
         if (siteData != null && siteData.msg.size() > 0) { //自定义站点
             for (int i = 0; i < siteData.msg.size(); i++) {
                 SourceBean sbData = new SourceBean();
@@ -344,19 +344,15 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                if(siteData.msg.get(i).type != 3){//自定义爬虫,添加扩展
-		    String str = siteData.msg.get(i).extend;
-			if(str!=""){
-			ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
-                        String[] genres = str.split(","); // 将字符串按逗号分割成数组  
-                        for (String genre : genres) {  
-                            cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
-                        }
-			    sbData.setCategories(cates);
-		    }
-
-		}
-
+                if(siteData.msg.get(i).type!=3){
+		                String str = siteData.msg.get(i).extend;                   					
+                        cates=null;    
+                        String[] genres = str.split(","); // 将字符串按逗号分割成数组    
+                        for (String genre : genres) {    
+                            cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中    
+                        }   
+                            sbData.setCategories(cates);	
+				}
 
                 
                 if (initData == null || !ToolUtils.getIsEmpty(initData.msg.uiRemoversc) || !initData.msg.uiRemoversc.contains(siteKey)) {
