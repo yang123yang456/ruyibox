@@ -344,9 +344,7 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                if(siteData.msg.get(i).type == 3){//自定义爬虫,添加扩展
-                    sbData.setExt(siteData.msg.get(i).extend);
-		}else{
+                if(siteData.msg.get(i).type != 3){//自定义爬虫,添加扩展
 		    String str = siteData.msg.get(i).extend;
 			if(str!="" && str!=null){
 			ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
@@ -355,7 +353,6 @@ public class ApiConfig {
                             cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
                         }
 			    sbData.setCategories(cates);
-
 		    }
 
 		}
