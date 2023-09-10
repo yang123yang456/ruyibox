@@ -348,16 +348,16 @@ public class ApiConfig {
                     sbData.setExt(siteData.msg.get(i).extend);
 		}else{
 		    String str = siteData.msg.get(i).extend;
-		    ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
-                    String[] genres = str.split(","); // 将字符串按逗号分割成数组  
-                    for (String genre : genres) {  
-                        cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
-                    }
-		    if (cates != null && !cates.isEmpty()) { //判断列表不为空或null，添加列表
-			sbData.setCategories(cates);
-		    }else{
-			sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
-		    }
+					if(str != null && !str.isEmpty()){
+				        ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
+                        String[] genres = str.split(","); // 将字符串按逗号分割成数组  
+                        for (String genre : genres) {  
+                            cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
+                        }
+					    if (cates != null && !cates.isEmpty()) { 
+				            sbData.setCategories(cates);
+					    }
+					}
 		}
 
 
