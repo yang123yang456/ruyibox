@@ -340,8 +340,14 @@ public class ApiConfig {
                 sbData.setFilterable(siteData.msg.get(i).filterable);
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
-                sbData.setExt(siteData.msg.get(i).extend);
-                sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+                //sbData.setExt(siteData.msg.get(i).extend);
+                //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+
+                if(!siteData.msg.get(i).type==3){
+					sbData.setCategories(DefaultConfig.safeJsonStringList(siteData.msg.get(i), "categories"));
+				}else{
+					sbData.setExt(siteData.msg.get(i).extend);
+				}
                 if (initData == null || !ToolUtils.getIsEmpty(initData.msg.uiRemoversc) || !initData.msg.uiRemoversc.contains(siteKey)) {
                     sourceBeanList.put(siteKey, sbData);
                     if (firstSite == null) firstSite = sbData;
