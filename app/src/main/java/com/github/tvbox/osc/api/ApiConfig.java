@@ -340,8 +340,24 @@ public class ApiConfig {
                 sbData.setFilterable(siteData.msg.get(i).filterable);
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
-                sbData.setExt(siteData.msg.get(i).extend);
-                sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+                //sbData.setExt(siteData.msg.get(i).extend);
+                //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+
+
+                if(siteData.msg.get(i).type=3){
+                    sbData.setExt(siteData.msg.get(i).extend);
+				}else{
+					String str = siteData.msg.get(i).extend;
+				    ArrayList<String> cates = new ArrayList<>();//新建一个列表  				    
+                    String[] genres = str.split(","); // 将字符串按逗号分割成数组  
+                    for (String genre : genres) {  
+                        cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中  
+                    }
+				    sbData.setCategories(cates);
+				}
+
+
+                
                 if (initData == null || !ToolUtils.getIsEmpty(initData.msg.uiRemoversc) || !initData.msg.uiRemoversc.contains(siteKey)) {
                     sourceBeanList.put(siteKey, sbData);
                     if (firstSite == null) firstSite = sbData;
