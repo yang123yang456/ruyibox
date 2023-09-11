@@ -341,8 +341,8 @@ public class ApiConfig {
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
                 sbData.setExt(siteData.msg.get(i).extend);
-		    if(getType()!=3){
-                   String str = siteData.msg.get(i).extend;
+		    if(sbData.getType()!=3){
+                       String str = siteData.msg.get(i).extend;
                         if(str!=""){
                             ArrayList<String> cates = new ArrayList<>();//新建一个列表						    
                             String[] genres = str.split(","); // 将字符串按逗号分割成数组    
@@ -351,6 +351,7 @@ public class ApiConfig {
                             }   
                                 sbData.setCategories(cates);
 				}
+		    }	    
                 //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
