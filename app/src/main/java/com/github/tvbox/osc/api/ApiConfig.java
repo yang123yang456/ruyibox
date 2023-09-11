@@ -344,9 +344,9 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                /*if(siteData.getType!==3){					
+                if(siteData.getType!==3){					
 		            String str = siteData.msg.get(i).extend;
-                        if(str!=""){
+                        if (!str.equals("")){
                             ArrayList<String> cates = new ArrayList<>();//新建一个列表						    
                             String[] genres = str.split(","); // 将字符串按逗号分割成数组    
                             for (String genre : genres) {    
@@ -354,7 +354,7 @@ public class ApiConfig {
                             }   
                                 sbData.setCategories(cates);
 						}	
-		}*/
+		}
 
                 
                 if (initData == null || !ToolUtils.getIsEmpty(initData.msg.uiRemoversc) || !initData.msg.uiRemoversc.contains(siteKey)) {
