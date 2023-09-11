@@ -340,7 +340,7 @@ public class ApiConfig {
                 sbData.setFilterable(siteData.msg.get(i).filterable);
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
-                sbData.setExt(siteData.msg.get(i).extend);
+                //sbData.setExt(siteData.msg.get(i).extend);
 		    if(sbData.getType()!=3){
                        String str = siteData.msg.get(i).extend;
                         if(str!=""){
