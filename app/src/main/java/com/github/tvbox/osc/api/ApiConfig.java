@@ -344,16 +344,15 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                if(siteData.getType!=3){					
-		            String str = siteData.msg.get(i).extend;
-                        if (!str.equals("")){
+
+		    String extend = siteData.msg.get(i).extend;
+                if(siteData.getType()!=3 && !extend.isEmpty()){					
                             ArrayList<String> cates = new ArrayList<>();//新建一个列表						    
-                            String[] genres = str.split(","); // 将字符串按逗号分割成数组    
+                            String[] genres =extend.split(","); // 将字符串按逗号分割成数组    
                             for (String genre : genres) {    
                                 cates.add(genre.trim()); // 去除每个元素的首尾空格并添加到列表中    
                             }   
-                                sbData.setCategories(cates);
-						}	
+                                sbData.setCategories(cates);	
 		}
 
                 
