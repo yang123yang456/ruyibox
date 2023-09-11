@@ -344,7 +344,7 @@ public class ApiConfig {
                 sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
-                if(siteData.getType!==3){					
+                if(siteData.getType!=3){					
 		            String str = siteData.msg.get(i).extend;
                         if (!str.equals("")){
                             ArrayList<String> cates = new ArrayList<>();//新建一个列表						    
