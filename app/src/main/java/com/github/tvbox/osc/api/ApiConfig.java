@@ -346,7 +346,7 @@ public class ApiConfig {
 
 
 		    String extend = siteData.msg.get(i).extend;
-                if(siteData.getType()!=3 && !extend.isEmpty()){					
+                if(sbData.getType()!=3 && !extend.isEmpty()){					
                             ArrayList<String> cates = new ArrayList<>();//新建一个列表						    
                             String[] genres =extend.split(","); // 将字符串按逗号分割成数组    
                             for (String genre : genres) {    
