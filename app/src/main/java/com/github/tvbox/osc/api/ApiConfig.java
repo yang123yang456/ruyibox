@@ -341,7 +341,10 @@ public class ApiConfig {
                 sbData.setPlayerUrl(siteData.msg.get(i).parse);
                 sbData.setPlayerType(siteData.msg.get(i).playertype);//设置播放器
                 sbData.setExt(siteData.msg.get(i).extend);
-                sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
+		    if(getType()!=3){
+                    sbData.setCategories(DefaultConfig.safeJsonStringList(initData, "extend"));
+				}
+                //sbData.setCategories(DefaultConfig.safeJsonStringList(null, "categories"));
 
 
                 /*if(siteData.msg.get(i).type==1){					
