@@ -357,7 +357,7 @@ public class PlayFragment extends BaseLazyFragment {
                         String flag = info.optString("flag");
                         String url = info.getString("url");
 
-                        url = removeParamsFromUrl(String url);//移除url后面参数
+                        url = removeParamsFromUrl(url);//移除url后面参数
                             
                         HashMap<String, String> headers = null;
                         webUserAgent = null;
