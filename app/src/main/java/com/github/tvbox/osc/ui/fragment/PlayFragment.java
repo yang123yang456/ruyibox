@@ -1138,9 +1138,9 @@ public class PlayFragment extends BaseLazyFragment {
         }
 
         WebResourceResponse checkIsVideo(String url, HashMap<String, String> headers) {
-//            if (url.endsWith("/favicon.ico")) {
-//                return new WebResourceResponse("image/png", null, null);
-//            }
+            if (url.toLowerCase().endsWith(".ico")) {//拦截ico请求
+                return new WebResourceResponse("image/x-icon", "UTF-8", null);
+            }
             LOG.i("shouldInterceptRequest url:" + url);
             boolean ad;
             if (!loadedUrls.containsKey(url)) {
