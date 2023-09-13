@@ -356,6 +356,9 @@ public class PlayFragment extends BaseLazyFragment {
                         String playUrl = info.optString("playUrl", "");
                         String flag = info.optString("flag");
                         String url = info.getString("url");
+
+                        url = removeParamsFromUrl(String url);//移除url后面参数
+                            
                         HashMap<String, String> headers = null;
                         webUserAgent = null;
                         webHeaderMap = null;
@@ -395,6 +398,15 @@ public class PlayFragment extends BaseLazyFragment {
                 }
             }
         });
+    }
+
+    public static String removeParamsFromUrl(String url) {//移除url后面参数
+        Pattern pattern = Pattern.compile("\\.html\\?.*");
+        Matcher matcher = pattern.matcher(url);
+        if (matcher.find()) {
+            return url.substring(0, matcher.start()) + ".html";
+        }
+        return url;
     }
 
     public void setData(Bundle bundle) {
