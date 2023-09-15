@@ -573,7 +573,7 @@ public class PlayActivity extends BaseActivity {
             mController.showParse(false);
             return;
         }
-        sourceViewModel.getPlay(sourceKey, mVodInfo.playFlag, progressKey, vs.url, subtitleCacheKey);
+        sourceViewModel.getPlay(sourceKey, mVodInfo.playFlag, progressKey, vs.url);
         //执行重新播放后还原之前的进度
 //        if (reset) CacheManager.save(MD5.string2MD5(progressKey),bodyKey);
     }
