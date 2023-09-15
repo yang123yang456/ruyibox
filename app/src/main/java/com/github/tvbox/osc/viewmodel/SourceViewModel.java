@@ -637,7 +637,7 @@ public class SourceViewModel extends ViewModel {
         }
     }
     // playerContent
-    public void getPlay(String sourceKey, String playFlag, String progressKey, String url, String subtitleKey) {
+    public void getPlay(String sourceKey, String playFlag, String progressKey, String url) {
         SourceBean sourceBean = ApiConfig.get().getSource(sourceKey);
         int type = sourceBean.getType();
         if (type == 3) {
@@ -650,7 +650,7 @@ public class SourceViewModel extends ViewModel {
                         JSONObject result = new JSONObject(json);
                         result.put("key", url);
                         result.put("proKey", progressKey);
-                        result.put("subtKey", subtitleKey);
+                        //result.put("subtKey", subtitleKey);
                         if (!result.has("flag"))
                             result.put("flag", playFlag);
                         playResult.postValue(result);
@@ -673,7 +673,7 @@ public class SourceViewModel extends ViewModel {
                     result.put("url", url);
                 }
                 result.put("proKey", progressKey);
-                result.put("subtKey", subtitleKey);
+                //result.put("subtKey", subtitleKey);
                 result.put("playUrl", playUrl);
                 result.put("flag", playFlag);
                 playResult.postValue(result);
@@ -704,7 +704,7 @@ public class SourceViewModel extends ViewModel {
                             JSONObject result = new JSONObject(json);
                             result.put("key", url);
                             result.put("proKey", progressKey);
-                            result.put("subtKey", subtitleKey);
+                            //result.put("subtKey", subtitleKey);
                             if (!result.has("flag"))
                                 result.put("flag", playFlag);
                             playResult.postValue(result);
