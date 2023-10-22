@@ -184,6 +184,7 @@ public class SourceViewModel extends ViewModel {
             OkGo.<String>get(sourceBean.getApi())
                 .tag(sourceBean.getKey() + "_sort")
                 .params("filter", "true")
+                .params("extend", sourceBean.getExt()) // 获取ext参数
                 .execute(new AbsCallback<String>() {
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
