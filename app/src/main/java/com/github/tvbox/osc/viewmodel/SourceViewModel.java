@@ -302,7 +302,7 @@ public class SourceViewModel extends ViewModel {
                 .params("t", sortData.id)
                 .params("pg", page)
                 .params("ext", ext)
-                .params("extend", sourceBean.getExt()) // 添加额外的参数       
+                .params("extend", homeSourceBean.getExt()) // 添加额外的参数       
                 .execute(new AbsCallback<String>() {
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
