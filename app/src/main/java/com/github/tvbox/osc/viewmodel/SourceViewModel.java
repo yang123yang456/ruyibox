@@ -301,7 +301,7 @@ public class SourceViewModel extends ViewModel {
                 .params("filter", "true")
                 .params("t", sortData.id)
                 .params("pg", page)
-                .params("ext", ext
+                .params("ext", ext)
                 .params("extend", sourceBean.getExt()) // 添加额外的参数       
                 .execute(new AbsCallback<String>() {
                     @Override
