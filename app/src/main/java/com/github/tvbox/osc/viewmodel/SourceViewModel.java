@@ -184,7 +184,6 @@ public class SourceViewModel extends ViewModel {
             OkGo.<String>get(sourceBean.getApi())
                 .tag(sourceBean.getKey() + "_sort")
                 .params("filter", "true")
-                .params("extend", sourceBean.getExt()) // 获取ext参数
                 .execute(new AbsCallback<String>() {
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
@@ -302,7 +301,6 @@ public class SourceViewModel extends ViewModel {
                 .params("t", sortData.id)
                 .params("pg", page)
                 .params("ext", ext)
-                .params("extend", homeSourceBean.getExt()) // 添加额外的参数       
                 .execute(new AbsCallback<String>() {
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
@@ -443,7 +441,6 @@ public class SourceViewModel extends ViewModel {
                     .tag("detail")
                     .params("ac", type == 0 ? "videolist" : "detail")
                     .params("ids", id)
-                    .params("extend", sourceBean.getExt()) // 添加额外的参数
                     .execute(new AbsCallback<String>() {
 
                         @Override
@@ -533,7 +530,6 @@ public class SourceViewModel extends ViewModel {
                 .params("ac" ,"detail")
                 .params("quick" ,"false")
                 .tag("search")
-                .params("extend", sourceBean.getExt()) // 添加额外的参数
                 .execute(new AbsCallback<String>() {
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
@@ -611,7 +607,6 @@ public class SourceViewModel extends ViewModel {
                 .params("wd", wd)
                 .params("ac" ,"detail")
                 .params("quick" ,"true")
-                .params("extend", sourceBean.getExt()) // 添加额外的参数
                 .tag("search")
                 .execute(new AbsCallback<String>() {
                     @Override
@@ -688,7 +683,6 @@ public class SourceViewModel extends ViewModel {
             }
         } else if (type == 4) {
             OkGo.<String>get(sourceBean.getApi())
-                .params("extend", sourceBean.getExt()) // 添加额外的参数
                 .params("play", url)
                 .params("flag" ,playFlag)
                 .tag("play")
