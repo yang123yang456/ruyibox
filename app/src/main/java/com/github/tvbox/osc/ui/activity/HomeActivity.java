@@ -909,10 +909,7 @@ public class HomeActivity extends BaseActivity {
         List<SourceBean> sites = new ArrayList<>();
         sites = ApiConfig.get().getSourceBeanList();
 
-        //for (SourceBean sb : ApiConfig.get().getSourceBeanList()) {
-        //    Log.e("beanList","bean key "+sb.getKey()+" name :"+sb.getName());
-        //    if (sb.getHide() == 0) sites.add(sb);
-        //}
+      
         if (sites.size() > 0) {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
 
