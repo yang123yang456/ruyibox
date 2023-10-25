@@ -13,9 +13,9 @@ public class HawkConfig {
     public static String APP_ID = "10000"; //应用ID2
     public static String SEN_SUS = ""; //百度统计
     public static String APP_Channel = ""; //渠道随意
-    public static final String BASE_URL_ENC = "aHR0cDovLzE5Mi4xNjguMC4yMjo4MDA1";//aHR0cDovLzE5Mi4xNjguMC4yMjo4MDA1:8005
+    public static final String BASE_URL_ENC = "aHR0cDovL3J1eWkueHl6eHl6LnN0b3JlOjY2ODg=";//aHR0cDovLzE5Mi4xNjguMC4yMjo4MDA1:8005
     public static String MMM_MMM = new String(Base64.decode(HawkConfig.BASE_URL_ENC.getBytes(), Base64.DEFAULT));
-    public static String API_KEY = "eM7nE5KrpsAyGxY6wFmQfne3F5y7EXfT"; //接口密钥
+    public static String API_KEY = "i3fGMAFS8KErXNBBAr8yfK6e5ikNm864"; //接口密钥
 
     public static final String DOH_URL = "doh_url";
     public static final String API_URL = "api_url";
