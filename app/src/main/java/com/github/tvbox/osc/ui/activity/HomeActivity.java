@@ -907,12 +907,12 @@ public class HomeActivity extends BaseActivity {
     //选择首页数据源多列
     void showSiteSwitch() {
         List<SourceBean> sites = new ArrayList<>();
-        //List<SourceBean>bean=ApiConfig.get().getSourceBeanList();
+        sites = ApiConfig.get().getSourceBeanList();
 
-        for (SourceBean sb : ApiConfig.get().getSourceBeanList()) {
-            Log.e("beanList","bean key "+sb.getKey()+" name :"+sb.getName());
-            if (sb.getHide() == 0) sites.add(sb);
-        }
+        //for (SourceBean sb : ApiConfig.get().getSourceBeanList()) {
+        //    Log.e("beanList","bean key "+sb.getKey()+" name :"+sb.getName());
+        //    if (sb.getHide() == 0) sites.add(sb);
+        //}
         if (sites.size() > 0) {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
 
