@@ -6,7 +6,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId 'com.ruyibox.zhuzige'
+        applicationId 'com.ruyibox.yangyang'
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
