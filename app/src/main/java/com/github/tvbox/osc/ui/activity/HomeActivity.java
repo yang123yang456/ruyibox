@@ -904,23 +904,40 @@ public class HomeActivity extends BaseActivity {
         }
     }
 
-    // 首页选择源
+    //选择首页数据源多列
     void showSiteSwitch() {
-        List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
+        List<SourceBean> sites = new ArrayList<>();
+        //List<SourceBean>bean=ApiConfig.get().getSourceBeanList();
+
+        for (SourceBean sb : ApiConfig.get().getSourceBeanList()) {
+            Log.e("beanList","bean key "+sb.getKey()+" name :"+sb.getName());
+            if (sb.getHide() == 0) sites.add(sb);
+        }
         if (sites.size() > 0) {
-            String homeSourceKey = ApiConfig.get().getHomeSourceBean().getKey();
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
-            dialog.setTip("选择首页数据来源");
+
+            // Multi Column Selection
+            int spanCount = (int) Math.floor(sites.size() / 10);
+            if (spanCount <= 1) spanCount = 1;
+            if (spanCount >= 3) spanCount = 3;
+
+            TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
+            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount));
+            LinearLayout cl_root = dialog.findViewById(R.id.cl_root);
+            ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
+            if (spanCount != 1) {
+                clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 400 + 260 * (spanCount - 1));
+            }
+
+            dialog.setTip(getString(R.string.dia_source));
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
                 public void click(SourceBean value, int pos) {
+                    Log.e("beanClick","click value : "+value.getName());
                     ApiConfig.get().setSourceBean(value);
-                    Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("useCache", true);
-                    intent.putExtras(bundle);
-                    HomeActivity.this.startActivity(intent);
+                    reloadHome();
+                    //强制清空
+                  //  ApiConfig.get().cleanSourceBeanList();
                 }
 
                 @Override
@@ -941,8 +958,7 @@ public class HomeActivity extends BaseActivity {
             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
-                    if (homeSourceKey != null && !homeSourceKey.equals(Hawk.get(HawkConfig.HOME_API, ""))) {
-                    }
+
                 }
             });
             dialog.show();
